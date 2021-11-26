@@ -1,12 +1,18 @@
 {
   "name": "resume",
-  "version": "0.0.0",
-  "repository": "https://github.com/HyunSeob/resume.git",
-  "author": "HyunSeob <mail@hyunseob.me>",
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ivory-code/resume"
+  },
+  "homepage": "https://ivory-code.github.io/resume",
+  "author": "ivory-code <kyo3553@gmail.com>",
   "license": "MIT",
   "scripts": {
     "start": "parcel src/index.html",
-    "build": "rm -rf docs; parcel build -d docs --public-url /resume src/index.html"
+    "build": "rm -rf docs; parcel build -d docs --public-url /resume src/index.html",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d docs"
   },
   "dependencies": {
     "normalize.css": "^8.0.0",
@@ -15,6 +21,7 @@
   "devDependencies": {
     "autoprefixer": "^9.1.5",
     "cssnano": "^4.1.4",
+    "gh-pages": "^3.2.3",
     "parcel-bundler": "^1.10.1",
     "postcss-modules": "^1.4.1"
   }
