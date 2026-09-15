@@ -1,0 +1,158 @@
+:root {
+  --ink: #1c2635;
+  --muted: #596578;
+  --accent: #2d63ad;
+  --line: #dce3eb;
+  --soft: #f5f8fc;
+  --paper: #ffffff;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 28px; }
+body {
+  margin: 0;
+  border-top: 5px solid var(--accent);
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans CJK KR", "Malgun Gothic", sans-serif;
+  font-size: 16px;
+  line-height: 1.8;
+  letter-spacing: -0.025em;
+  -webkit-font-smoothing: antialiased;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+::selection { background: #dbe9fc; }
+a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 4px; }
+a:hover { color: var(--ink); }
+a:focus-visible, summary:focus-visible { outline: 3px solid var(--accent); outline-offset: 5px; }
+p { margin: 0 0 13px; }
+p:last-child { margin-bottom: 0; }
+h1, h2, h3, h4 { line-height: 1.45; margin: 0; font-weight: 700; }
+time, .overline, .section-number { font-variant-numeric: tabular-nums; }
+.container { width: calc(100% - 80px); max-width: 1000px; margin: 0 auto; }
+.skip-link { position: absolute; top: -100px; left: 16px; background: white; padding: 10px 16px; z-index: 10; }
+.skip-link:focus { top: 12px; }
+.topbar { display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 26px 0; border-bottom: 1px solid var(--line); }
+.wordmark { font-weight: 700; font-size: 14px; letter-spacing: 0.08em; text-decoration: none; color: var(--ink); }
+nav { display: flex; flex-wrap: wrap; gap: 10px 24px; font-size: 13px; }
+nav a { color: var(--muted); text-decoration: none; }
+nav a:hover { color: var(--accent); }
+.hero { padding: 60px 0 45px; }
+.overline { color: var(--accent); font-size: 12px; letter-spacing: 0.14em; font-weight: 700; margin-bottom: 14px; }
+.identity { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 20px; margin-bottom: 18px; }
+h1 { font-size: 50px; letter-spacing: -0.06em; line-height: 1.2; }
+.identity .role { font-size: 17px; color: var(--muted); letter-spacing: 0; }
+.headline { font-size: 29px; line-height: 1.55; font-weight: 650; letter-spacing: -0.045em; margin-bottom: 20px; }
+.intro { max-width: 835px; color: #39465a; font-size: 16px; }
+.contact-links { display: flex; flex-wrap: wrap; gap: 10px 24px; margin-top: 24px; font-size: 14px; }
+.section { padding: 48px 0 52px; border-top: 1px solid var(--line); }
+.section-heading { display: flex; align-items: baseline; gap: 13px; margin-bottom: 30px; }
+.section-number { font-size: 12px; letter-spacing: 0.09em; color: var(--accent); font-weight: 700; }
+h2 { font-size: 25px; letter-spacing: -0.04em; }
+.company { display: grid; grid-template-columns: 194px minmax(0, 1fr); gap: 38px; padding: 37px 0 43px; border-top: 1px solid var(--line); }
+.company:first-of-type { padding-top: 0; border-top: 0; }
+.company:last-of-type { padding-bottom: 0; }
+.company-info h3 { font-size: 21px; margin-bottom: 8px; }
+.company-info .english { font-size: 12px; color: var(--muted); letter-spacing: 0.05em; margin-bottom: 12px; }
+.company-info .role { font-size: 14px; color: #34445b; margin-bottom: 3px; }
+.period { font-size: 13px; color: var(--muted); letter-spacing: 0; }
+.company-scope { color: #435168; font-size: 15px; padding-bottom: 19px; border-bottom: 1px solid var(--line); margin-bottom: 24px; }
+.project { margin-bottom: 30px; }
+.project:last-child { margin-bottom: 0; }
+h4 { font-size: 19px; line-height: 1.6; margin-bottom: 10px; letter-spacing: -0.035em; }
+.project p { font-size: 15px; line-height: 1.9; }
+.result { border-left: 3px solid var(--accent); padding: 7px 0 7px 13px; font-weight: 650; color: var(--accent); font-size: 14px !important; line-height: 1.8 !important; margin-bottom: 12px; }
+.measurement-note { color: var(--muted); font-size: 12px !important; line-height: 1.75 !important; margin: -4px 0 15px; }
+.tech { font-size: 12px !important; color: var(--muted); line-height: 1.8 !important; letter-spacing: 0; margin-top: 12px; }
+.tech strong { font-weight: 600; color: #3e4f68; margin-right: 8px; }
+.supporting-note { color: var(--muted); font-size: 14px !important; }
+.personal-project { display: grid; grid-template-columns: 194px minmax(0, 1fr); gap: 38px; padding: 30px 0; border-top: 1px solid var(--line); }
+.personal-project:first-of-type { border-top: 0; padding-top: 0; }
+.personal-project:last-of-type { padding-bottom: 0; }
+.personal-project h3 { font-size: 21px; margin-bottom: 6px; }
+.personal-project .subtitle { font-size: 13px; color: var(--muted); margin-bottom: 10px; }
+.personal-project h4 { margin-bottom: 12px; }
+.personal-project .description p { font-size: 15px; line-height: 1.9; }
+.project-links { display: flex; flex-wrap: wrap; gap: 8px 22px; margin-top: 15px; font-size: 13px; }
+.skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px 44px; }
+.skill h3 { font-size: 15px; margin-bottom: 7px; }
+.skill p { font-size: 14px; color: #435168; line-height: 1.85; letter-spacing: 0; }
+.background { display: grid; grid-template-columns: 1.1fr 1fr; gap: 42px; }
+.background h3 { font-size: 18px; margin-bottom: 15px; }
+.background p { font-size: 14px; color: #435168; }
+.background-list { margin: 0; }
+.background-row { margin-bottom: 14px; }
+.background-row dt { font-size: 14px; font-weight: 600; }
+.background-row dd { margin: 0; font-size: 12px; color: var(--muted); }
+.education-note { margin-top: 8px; }
+.footer { padding: 30px 0 46px; border-top: 1px solid var(--line); display: flex; align-items: baseline; flex-wrap: wrap; justify-content: space-between; gap: 12px 24px; }
+.footer .signature { font-size: 14px; font-weight: 600; }
+.footer .contact-links { margin-top: 0; font-size: 13px; }
+@media (max-width: 800px) {
+  .container { width: calc(100% - 48px); }
+  .hero { padding-top: 43px; }
+  .headline { font-size: 26px; }
+  .company, .personal-project { grid-template-columns: 158px minmax(0, 1fr); gap: 26px; }
+}
+@media (max-width: 620px) {
+  .container { width: calc(100% - 40px); }
+  .topbar { padding: 20px 0; display: block; }
+  nav { margin-top: 13px; gap: 8px 20px; }
+  .hero { padding: 36px 0 34px; }
+  h1 { font-size: 41px; }
+  .identity { gap: 6px 15px; }
+  .identity .role { font-size: 15px; }
+  .headline { font-size: 24px; line-height: 1.6; }
+  .headline br { display: none; }
+  .intro { font-size: 15px; line-height: 1.95; }
+  .contact-links { gap: 9px 18px; font-size: 13px; }
+  .section { padding: 36px 0 38px; }
+  .section-heading { margin-bottom: 26px; }
+  h2 { font-size: 22px; }
+  .company, .personal-project { grid-template-columns: 1fr; gap: 21px; padding: 31px 0; }
+  .company-info { padding-left: 13px; border-left: 3px solid var(--line); }
+  .company-info h3 { margin-bottom: 3px; }
+  .company-info .english { margin-bottom: 6px; }
+  .company-scope { font-size: 14px; }
+  h4 { font-size: 18px; }
+  .project { margin-bottom: 27px; }
+  .project p, .personal-project .description p { font-size: 14px; line-height: 1.95; }
+  .skills-grid, .background { grid-template-columns: 1fr; gap: 24px; }
+  .footer { padding-bottom: 30px; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+@media print {
+  @page { size: A4; margin: 14mm 14mm 16mm; }
+  html { scroll-behavior: auto; }
+  body { font-size: 10pt; border-top: 0; color: #111; background: #fff; }
+  .container { width: 100%; max-width: none; }
+  .topbar, .skip-link { display: none; }
+  .hero { padding: 0 0 18px; }
+  .overline { font-size: 8pt; margin-bottom: 6px; }
+  h1 { font-size: 29pt; }
+  .identity { margin-bottom: 9px; }
+  .identity .role { font-size: 11pt; }
+  .headline { font-size: 16pt; margin-bottom: 10px; }
+  .intro, .project p, .personal-project .description p { font-size: 9.5pt; line-height: 1.7; }
+  .contact-links { font-size: 8pt; margin-top: 12px; }
+  .section { padding: 20px 0 22px; }
+  .section-heading { margin-bottom: 16px; break-after: avoid; }
+  h2 { font-size: 15pt; }
+  .company, .personal-project { display: block; padding: 19px 0; }
+  .company-info { margin-bottom: 14px; break-after: avoid; border-left: 0; padding-left: 0; }
+  .company-info h3, .personal-project h3 { font-size: 13pt; }
+  .company-info .english { display: none; }
+  .company-info .role, .period, .company-scope { font-size: 9pt; }
+  .company-scope { padding-bottom: 10px; margin-bottom: 16px; break-after: avoid; }
+  .project { margin-bottom: 17px; break-inside: avoid; }
+  h4 { font-size: 11pt; break-after: avoid; }
+  .result { font-size: 9pt !important; padding-top: 2px; padding-bottom: 2px; }
+  .tech { font-size: 8pt !important; margin-top: 6px; }
+  .project-links, .personal-project .subtitle { font-size: 8pt; }
+  .skills-grid { gap: 15px 25px; }
+  .skill h3, .background h3 { font-size: 10pt; }
+  .skill p, .background p, .background-row dt { font-size: 9pt; }
+  .background-row dd { font-size: 8pt; }
+  .footer { padding: 14px 0 0; }
+  a { color: inherit; text-decoration: none; }
+}
