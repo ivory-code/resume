@@ -9,8 +9,8 @@
   "author": "ivory-code <kyo3553@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "parcel src/index.html",
-    "build": "rm -rf docs; parcel build -d docs --public-url /resume src/index.html",
+    "start": "parcel src/index.html src/career.html",
+    "build": "node scripts/build.js",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d docs"
   },
