@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html lang="ko"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/><meta content="권한성" name="author"/><meta content="디자인 시스템 설계와 제품 도입, WebView 초기 로딩, 이미지 처리 구조 개선에 관한 기술 프로젝트 상세" name="description"/><title>권한성 | 경력기술서 - 설계와 기술 의사결정</title>
+<link href="./career.css" rel="stylesheet"/><link href="https://ivory-code.github.io/resume/career.html" rel="canonical"/><meta content="https://ivory-code.github.io/resume/career.html" property="og:url"/><meta content="권한성 | 경력기술서" property="og:title"/><meta content="공통 디자인 시스템의 설계와 도입, WebView 로딩 최적화, 이미지 처리 구조를 상세히 설명합니다." property="og:description"/><meta content="#285e9c" name="theme-color"/><meta content="website" property="og:type"/><meta content="ko_KR" property="og:locale"/><meta content="https://ivory-code.github.io/resume/resume-cover.png" property="og:image"/><link href="./favicon.png" rel="icon" type="image/png"/></head>
+<body><nav aria-label="문서 탐색" class="online-nav"><a href="./">권한성 / 이력서</a><div><a href="#design-system">디자인 시스템</a><a href="#webview-performance">WebView 성능</a><a href="#image-processing">이미지 처리</a><button onclick="window.print()" type="button">인쇄 / PDF 저장</button></div></nav>
+<main id="main"><article aria-label="1쪽" class="page design-case" id="design-system"><div class="page-content"><div class="topline"><span>권한성 / 경력기술서</span><div class="contact"><a href="mailto:kyo3553@gmail.com">kyo3553@gmail.com</a><a href="https://github.com/ivory-code">GitHub</a><a href="./">이력서 보기</a></div></div><header class="case-header">
+<div class="case-tag">PROJECT 01 / 에이비제트 / 공통 디자인 시스템</div>
+<h1>공통 디자인 시스템 설계와<br/>단계적 제품 도입</h1>
+<p class="meta">React, TypeScript, Panda CSS, 공통 UI 패키지</p>
+<p class="meta"><span class="role-label">담당</span>공통 UI 설계, 제품별 호환 레이어와 도입, 검수 하네스 개발</p>
+</header>
+<section class="section">
+<h2>기존 제품을 유지하면서 공통 개발 기준 도입</h2>
+<p>여러 UI 패키지를 함께 사용하던 웹 서비스에서 디자인 토큰과 공통 UI를 개발하고 기존 서비스에 적용했습니다. 컴포넌트를 만드는 것뿐 아니라, 제품마다 다른 스타일과 동작을 어디까지 공통화할지 정하고 기존 화면을 유지하면서 교체할 방법이 필요했습니다.</p>
+</section>
+<section class="section">
+<h2>공통 API와 제품별 컴포지션 분리</h2>
+<p>상태와 접근성, 반복되는 동작은 공통 컴포넌트가 담당하고, 제품 고유의 배치와 업무 로직은 서비스 레이어에 남겼습니다. 여러 사용처에 반복되는 요구만 공통 API에 반영하고, 단일 화면의 표현을 위해 variant나 파생 컴포넌트를 늘리지 않았습니다.</p>
+<p><strong>적용 예시:</strong> 비동기 액션의 로딩 상태, 중복 실행 방지와 접근성 처리는 공통 컴포넌트에서 제공했습니다. 화면별 크기와 간격은 제품에서 조합하고, 기존 표현을 유지해야 하는 부분은 호환 레이어로 처리했습니다.</p>
+</section>
+<section class="section">
+<h2>공통 패키지와 실제 제품 사이의 도입 방식</h2>
+<p>공통 패키지 변경, 서비스 설정, 실제 화면 교체를 단계별로 나눴습니다. 마이그레이션의 완료 기준은 기존 UI와 동작을 유지하는 것으로 정하고, 리디자인은 별도 변경으로 분리했습니다. 스타일 차이는 공통 스타일 recipe를 임의로 덮는 대신 도입용 호환 레이어에 모았습니다.</p>
+<p>공통 패키지, 컴포넌트 검증 화면(Playground)과 서비스의 Panda 클래스 생성 규칙을 맞췄습니다. 패키지 테스트만으로 끝내지 않고, 사용하는 서비스의 타입 검사와 production 빌드에서도 공통 UI가 동작하는지 확인했습니다.</p>
+</section>
+<section class="section">
+<h2>제작, 도입, 사용을 구분한 하네스와 스킬</h2>
+<p>신규 컴포넌트 제작, 기존 제품 도입, 일반 화면 개발을 서로 다른 작업 모드로 정의하고, 진입 조건과 검수 순서를 하네스와 재사용 스킬에 정리했습니다. 문서의 목표 스펙보다 대상 브랜치에 실제 제공되는 export, props와 서비스 설정을 먼저 확인하도록 했습니다.</p>
+<p>아직 없는 API가 필요하면 제품 코드에서 임시 구현하지 않고 공통 패키지의 선행 작업으로 분리했습니다. 개발자와 에이전트가 같은 스펙과 검수 절차를 사용하도록 작업 기준을 관리했습니다.</p>
+</section>
+<section class="section">
+<h2>제품 적용과 회귀 검증</h2>
+<p>캠페인 신청, 프로필 관리, 채팅 등 실제 업무 화면에 공통 UI를 적용하고, Playground의 상태별 예제와 실제 화면을 함께 검증했습니다. 동일한 브라우저, viewport, 계정과 데이터 조건에서 이미지 diff, computed style과 인터랙션을 비교하고 차이가 발생한 부분에 회귀 테스트를 추가했습니다.</p>
+<p>공통 UI와 호환 레이어, 제품 도입 절차를 함께 남겨 이후 화면도 같은 기준으로 교체하고 검토할 수 있도록 했습니다.</p>
+</section>
+</div><footer><span>Client Product Engineer / 기술 프로젝트 상세</span><span>01 / 03</span></footer>
+</article><article aria-label="2쪽" class="page" id="webview-performance"><div class="page-content"><div class="topline"><span>권한성 / 경력기술서</span><div class="contact"><a href="mailto:kyo3553@gmail.com">kyo3553@gmail.com</a><a href="https://github.com/ivory-code">GitHub</a><a href="./">이력서 보기</a></div></div><header class="case-header"><div class="case-tag">PROJECT 02 / 에이비제트 / WebView 기반 모바일 서비스</div><h1>WebView 초기 로딩의 병목 분석과<br/>SSR 적용 범위 결정</h1><p class="meta">WebView, 코드 스플리팅, 레이지 로딩, SSR, Lighthouse</p><p class="meta"><span class="role-label">담당</span>리소스 로딩 분석, SSR 적용 범위 결정, 비교 측정과 에러 처리</p></header>
+<section class="section"><h2>문제와 원인</h2><p>현재 화면과 무관한 청크까지 preload되고, 로그인 폼은 클라이언트 초기화가 끝나야 표시되는 구조였습니다. 다운로드 용량과 화면 표시 시점을 나눠 확인했습니다. 로그인 폼만 SSR로 바꾼 비교에서 LCP가 5.61초에서 1.40초로 줄었고, 렌더 지연도 5.01초에서 0.78초로 줄어 API 응답보다 hydration 대기가 직접적인 병목임을 확인했습니다.</p></section>
+<section class="section"><h2>인증 동작을 보존한 로딩 구조 변경</h2><p>페이지 단위 코드 스플리팅과 preload 설정을 수정했습니다. 첫 화면에 필요 없는 UI 컴포넌트와 본인인증 SDK는 사용 시점에 로드하고, 홈의 중복 API 요청을 제거했습니다.</p><p>SSR은 세션 정보가 없는 신규 로그인에만 적용했습니다. 기존 계정의 세션 이관과 멀티 계정 로그인은 계정 조회 경로를 유지해, 렌더링 최적화가 인증 동작까지 바꾸지 않도록 했습니다.</p></section>
+<section class="section"><h2>측정 결과에 따라 제외한 최적화</h2><table class="choices"><thead><tr><th>비교 대상</th><th>확인한 결과</th><th>결정</th></tr></thead><tbody><tr><td>CSS 전체 추출</td><td>LCP 1.40초에서 3.16초<br/>요청 수 21개에서 28개</td><td>현재 변경에는 포함하지 않음</td></tr><tr><td>오류 안내와 로딩 UI의 레이지 로딩</td><td>정적 import 4.976초<br/>레이지 로딩 5.135초</td><td>이점이 없어 초기 로딩에 유지</td></tr></tbody></table><p>오류 안내 UI 비교는 해당 import 방식만 바꾼 별도 A/B 측정입니다. 전체 최적화 전후 수치와 구분했습니다.</p></section>
+<section class="section"><h2>에러 처리와 검증 결과</h2><p>청크 로드 실패 시 한 번 더 요청하도록 했습니다. 본인인증 SDK는 스크립트 태그만 남고 API가 준비되지 않은 상태를 구분해 태그를 교체하도록 했습니다. 신규 로그인 SSR과 기존 멀티 계정 경로를 확인하고, 로컬 production 빌드의 모바일 cold start를 같은 조건에서 3회 측정한 중앙값으로 비교했습니다.</p><table class="measure"><thead><tr><th>전체 최적화 전후</th><th>변경 전</th><th>변경 후</th></tr></thead><tbody><tr><td>로그인 진입 LCP</td><td>18.78초</td><td class="after">1.40초</td></tr><tr><td>초기 전송량</td><td>3.00 MB</td><td class="after">0.64 MB</td></tr><tr><td>초기 요청 수</td><td>44개</td><td class="after">21개</td></tr></tbody></table><p>실제 iOS와 Android WebView의 cold/warm 진입 측정은 이 로컬 비교와 별도의 확인 항목으로 남겼습니다.</p></section>
+</div><footer><span>Client Product Engineer / 기술 프로젝트 상세</span><span>02 / 03</span></footer>
+</article><article aria-label="3쪽" class="page" id="image-processing"><div class="page-content"><div class="topline"><span>권한성 / 경력기술서</span><div class="contact"><a href="mailto:kyo3553@gmail.com">kyo3553@gmail.com</a><a href="https://github.com/ivory-code">GitHub</a><a href="./">이력서 보기</a></div></div><header class="case-header"><div class="case-tag">PROJECT 03 / 에이비제트 / 다중 이미지 업로드 화면</div><h1>이미지 디코딩의 워커 분리와<br/>비동기 UI 업데이트 설계</h1><p class="meta">TypeScript, Web Worker, WebAssembly, Blob URL</p><p class="meta"><span class="role-label">담당</span>처리 구조 설계, 워커 전환, 비동기 상태 관리와 회귀 검증</p></header>
+<section class="section"><h2>문제와 원인</h2><p>사진을 여러 장 추가할 때 썸네일이 늦게 보인다는 피드백을 확인했습니다. HEIC 디코딩이 전역 큐에서 직렬로 실행되고, 메인 스레드를 점유해 UI가 멈췄습니다. 작성 화면도 전체 배치가 끝난 뒤에만 썸네일을 표시하고 있어, 연산과 UI 반영 방식을 함께 바꿨습니다.</p></section>
+<section class="section"><h2>연산 처리와 화면 업데이트 분리</h2><table class="choices"><thead><tr><th>구분</th><th>기존 방식</th><th>변경한 방식</th></tr></thead><tbody><tr><td>디코딩</td><td>메인 스레드의 직렬 처리</td><td>Web Worker 2개로 분리</td></tr><tr><td>썸네일 표시</td><td>배치 전체 완료 후 표시</td><td>완료된 파일부터 선택 순서에 맞춰 표시</td></tr><tr><td>결과 이미지 전달</td><td>data URL 생성</td><td>Blob URL로 바꿔 동기 base64 인코딩 제거</td></tr></tbody></table></section>
+<section class="section"><h2>timeout, 상태 충돌과 폴백 처리</h2><p>워커 준비, 파일 읽기, 디코딩에 각각 timeout을 뒀습니다. 약 5 MB의 WASM을 받는 동안 워커 재생성이 반복되거나, 끝나지 않는 파일 읽기가 처리 슬롯을 계속 점유하지 않도록 했습니다.</p><p>배치 처리 중에는 기존 이미지 정보를 보정하는 작업과 순서 변경을 일시적으로 막아, 썸네일 상태를 재계산하는 작업끼리 충돌하지 않도록 했습니다. 이 경합 때문에 로딩 표시가 끝나지 않던 문제를 함께 수정했습니다. Worker나 WASM을 사용할 수 없으면 기존 메인 스레드 디코딩으로 폴백합니다. Safari의 네이티브 HEIC 렌더링과 EXIF 썸네일 우선 경로는 유지했습니다.</p></section>
+<section class="section"><h2>비교 측정과 회귀 검증</h2><p>동일 코드 하네스에서 HEIC 20장, 총 165 MB를 일괄 추가해 비교했습니다. UI 정지 횟수는 디코딩 중 200ms 이상 멈춘 경우를 집계했습니다.</p><table class="measure"><thead><tr><th>측정 항목</th><th>변경 전</th><th>변경 후</th></tr></thead><tbody><tr><td>첫 썸네일 표시</td><td>21.0초</td><td class="after">1.8초</td></tr><tr><td>전체 처리 완료</td><td>21.0초</td><td class="after">10.9초</td></tr><tr><td>200ms 이상 UI 정지</td><td>20회</td><td class="after">0회</td></tr><tr><td>JPEG 20장 처리</td><td>0.30초</td><td class="after">0.13초</td></tr></tbody></table><p>production 번들에서 워커 청크가 생성되고 실행되는 것을 확인했습니다. 업로드와 제출 코드는 바꾸지 않았으며, 288 MB 영상과 40개 파일을 포함한 업로드 테스트로 기존 경로도 확인했습니다.</p></section>
+</div><footer><span>Client Product Engineer / 기술 프로젝트 상세</span><span>03 / 03</span></footer>
+</article></main></body></html>
